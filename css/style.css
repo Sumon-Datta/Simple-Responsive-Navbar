@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all .5s linear;
+}
+
+:root{
+    --background: rgba(14, 28, 49, 1);
+    --color: rgba(241, 246, 253, 1);
+    --spanColor: rgb(255, 255, 107);
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    background: var(--background);
+    padding: 1rem 3rem;
+}
+
+.navbar a{
+    padding: 0 1.5rem;
+    color: var(--color);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.brand a{
+   color: var(--color); 
+   font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.brand a span{
+    color: var(--spanColor);  
+}
+
+.menubar{
+    color: var(--color);
+    font-size: 1.3rem;
+    display: none;
+    cursor: pointer;  
+}
+
+
+@media (max-width:768px){
+    .menubar{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 9%;
+        background: var(--background);
+        left: 0;
+        height: 50vh;
+        width: 16rem;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+
+    .navbar a{
+        display: block;
+        margin-top: 1rem;
+        margin-left: 1.5rem;
+    }
+
+    .fa-times{
+        transform: rotate(90deg);
+    }
+
+    .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+}
+
